@@ -1,0 +1,50 @@
+﻿
+    <div id="stuffTab" class="tab" ng-controller="StuffController">
+        <div class="panel">
+            <div class="grey-button pull-left addButton" ng-click="addNewStuff()">
+                <h6>
+                    Add new
+                </h6>
+            </div>
+            <div class="magnifier-form pull-left">
+                <input type="text" ng-model="searchStuff" placeholder="search Stuff" class="search-query search">
+                <label class="magnifier" />
+            </div>
+        </div>
+        <ul class="thumbnails listEntities">
+            <li ng-repeat="stuff in pagedItems[pageInArray] | orderBy:stuff | filter:searchStuff" class="title-color">
+                <div id="stuff-description" class="descriptionEntities">
+                    <a class="example-image-link" href="{{stuff.Avatar}}" data-lightbox="{{stuff.Avatar}}"
+                       title="stuff {{stuff.FirstName }} {{stuff.LastName }}">
+                        <img class="pull-left example-image round" ng:src="{{stuff.Avatar}}" />
+                    </a>
+                   
+                   <h6> First Name : </h6>   <p class="pull-left">
+                       {{stuff.FirstName }} 
+                    </p>
+                   <br/>
+                        
+                 <h6 class="mrgT10"> Last Name : </h6>    <p class="mrgT10"> {{stuff.LastName }} </p>
+                     
+                   
+                </div>
+                <div id="stuff-buttons" class="group-button pull-right">
+                    <div class="profile-button pull-left mrgR10" ng-click="openProfiles(stuff)">
+                    </div>
+                    <div class="portfolio-button pull-left mrgR10" ng-click="openPortfolios(stuff)">
+                    </div>
+                    <div class="edit-stuff-button pull-left mrgR10" ng-click="editStuff(stuff)">
+                    </div>
+                    <div class="delete-stuff-button pull-left" ng-click="deleteStuff(stuff)">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+                <div class="greyLine mrgT20">
+                </div>
+            </li>
+        </ul>
+        <pagination on-select-page="pageChanged(page)" num-pages="pagedItems.length" current-page="currentPage"
+                    max-size="maxSize" rotate="false" class="paging" boundary-links="true">
+        </pagination>
+    </div>
