@@ -1,13 +1,15 @@
 ﻿
 mobileApp.factory('loginService', ['$http', '$log', function ($http, $log) {
-
+    //            var url = "http://localhost:51933/Account/LoginMobile/";  
+    //            var url = "http://localhost:51933/api/Mobile"
+    var url = "http://stuffproposal.uarank.com/api/Mobile";
 
     return {
 
         loginOnServer: function (loginModel, responce) {
 
 
-            var url = "http://localhost:51933/Account/LoginMobile/"; // +"/post?callback=jsonp_callback";
+ 
 
             //            $.getJSON(url, loginModel, function (data, textStatus, jqXHR) {
             //                responce(data, textStatus, jqXHR);
@@ -48,7 +50,7 @@ mobileApp.factory('loginService', ['$http', '$log', function ($http, $log) {
 
         postRequest: function (responce) {
 
-            var url = "http://localhost:51933/api/Mobile";
+          
 
             $.ajax({
                 type: "POST",
@@ -68,7 +70,7 @@ mobileApp.factory('loginService', ['$http', '$log', function ($http, $log) {
 
         putRequest: function (responce) {
 
-            var url = "http://localhost:51933/api/Mobile";
+        
 
             $.ajax({
                 type: "PUT",
@@ -89,7 +91,7 @@ mobileApp.factory('loginService', ['$http', '$log', function ($http, $log) {
 
         deleteRequst: function (responce) {
 
-            var url = "http://localhost:51933/api/Mobile";
+        
 
             $.ajax({
                 type: "DELETE",
@@ -110,7 +112,7 @@ mobileApp.factory('loginService', ['$http', '$log', function ($http, $log) {
         },
 
         getRequest: function (responce) {
-            var url = "http://localhost:51933/api/Mobile";
+//            var url = "http://localhost:51933/api/Mobile";
 
             $.ajax({
                 type: "GET",
@@ -125,7 +127,7 @@ mobileApp.factory('loginService', ['$http', '$log', function ($http, $log) {
                     console.log(arguments);
                     alert(" Can't do because: " + error);
                 }
-            }); 
+            });
         }
     };
 } ]);

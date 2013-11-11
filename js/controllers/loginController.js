@@ -48,7 +48,7 @@ mobileApp.controller("LoginController", ['$scope', 'loginService', function Comp
 
         loginService.postRequest(function (request) {
 
-            $scope.messageRequest = "POST: " + request;
+            $scope.messageRequest = "POST: " + " id:" + request.Id + " Desc: " + request.Desc;
         });
     };
 

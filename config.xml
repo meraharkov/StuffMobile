@@ -50,7 +50,7 @@
   
   
   <!--<access origin="http://127.0.0.1*" />-->
-  <access origin="http://localhost:51933*"/>
+  <access origin="http://stuffproposal.uarank.com/*"/>
 
   <!--<access origin="*" subdomains="true"/>--> 
   <!--<log level="DEBUG"/>
