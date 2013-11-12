@@ -33,6 +33,7 @@ mobileApp.controller("LoginController", ['$scope', 'loginService', function Comp
         loginService.putRequest(function (request) {
 
             $scope.messageRequest = "PUT: " + request;
+            $scope.$apply();
         });
     };
 
@@ -41,6 +42,7 @@ mobileApp.controller("LoginController", ['$scope', 'loginService', function Comp
         loginService.deleteRequst(function (request) {
 
             $scope.messageRequest = "DELETE: " + request;
+            $scope.$apply();
         });
     };
 
@@ -49,14 +51,15 @@ mobileApp.controller("LoginController", ['$scope', 'loginService', function Comp
         loginService.postRequest(function (request) {
 
             $scope.messageRequest = "POST: " + " id:" + request.Id + " Desc: " + request.Desc;
+            $scope.$apply();
         });
     };
 
-    $scope.get = function ()
-    {
+    $scope.get = function () {
         loginService.getRequest(function (request) {
 
             $scope.messageRequest = "GET: " + request;
+            $scope.$apply();
         });
     };
 
